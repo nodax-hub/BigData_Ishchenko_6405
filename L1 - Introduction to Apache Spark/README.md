@@ -2,7 +2,6 @@
 
 [L1_Apache_Spark.md](L1_Apache_Spark.md)
 
-
 # Развёртывание MapR с помощью Docker
 
 https://hub.docker.com/r/maprtech/dev-sandbox-container
@@ -38,17 +37,19 @@ docker exec -d maprdemo /opt/mapr/server/configure.sh -R
 ```
 ssh root@localhost -p 2222
 ```
+
 или
+
 ```
 ssh mapr@localhost -p 2222
 ```
 
 Пароль: mapr
 
-
 ## Настройка Spark
 
 Добавьте расположение Spark утилит в переменную среды PATH для их вызова без указания полного пути.
+
 ```
 echo 'export PATH=$PATH:/opt/mapr/spark/spark-2.4.5/bin' > /home/mapr/.bash_profile
 ```
@@ -57,12 +58,12 @@ https://docs.datafabric.hpe.com/62/AdvancedInstallation/InstallingHadoop.html
 
 ## Веб-интерфейсы
 
-| Имя сервиса | Адрес | Комментарии |
-|---|---|---|
-| CLDB | localhost:7221  | Должен запуститься в первую очередь. |
+| Имя сервиса                     | Адрес           | Комментарии                                                                    |
+|---------------------------------|-----------------|--------------------------------------------------------------------------------|
+| CLDB                            | localhost:7221  | Должен запуститься в первую очередь.                                           |
 | Веб консоль администратора MapR | localhost:8443  | Используется самоподписанный сертификат - сделайте исключение для этого сайта. |
-| Resource manager | localhost:8088  | |
-| History server | localhost:19888 | |
+| Resource manager                | localhost:8088  |                                                                                |
+| History server                  | localhost:19888 |                                                                                |
 
 https://docs.datafabric.hpe.com/62/ReferenceGuide/MapRPorts.html
 
